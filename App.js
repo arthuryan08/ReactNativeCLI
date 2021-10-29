@@ -1,33 +1,41 @@
-import React from 'react';
-import {SafeAreaView, View, Text, StyleSheet} from 'react-native';
+import React, {useState} from 'react';
+import {SafeAreaView, View, Text, Button} from 'react-native';
 import styled from 'styled-components/native';
 
 const Page = styled.SafeAreaView`
   flex: 1;
-`;
-
-const Header = styled.View`
-  flex-direction: row;
   justify-content: center;
-  background-color: #eee;
-  height: 200px;
+  align-items: center;
 `;
 
-const Quadrado = styled.View`
-  width: 50px;
-  height: 50px;
-  background-color: ${props => props.cor};
+const Input = styled.TextInput`
+  width: 200px;
+  height: 40px;
+  border: 1px solid #000;
 `;
+
+const Hello = () => {
+  const [name, setName] = useState('');
+
+  const [showName, setSHowName] = useState('');
+
+  const handleClick = () => {
+    setSHowName(name);
+  };
+
+  return (
+    <View>
+      <Input value={name} onChangeText={e => setName(e)} />
+      <Button title="Salvar" onPress={handleClick} />
+      <Text>{showName}</Text>
+    </View>
+  );
+};
 
 export default () => {
   return (
     <Page>
-      <Header>
-        <Quadrado cor="red"></Quadrado>
-        <Quadrado style={{alignSelf: 'flex-end'}} cor="green"></Quadrado>
-        <Quadrado cor="blue"></Quadrado>
-        <Quadrado cor="pink"></Quadrado>
-      </Header>
+      <Hello />
     </Page>
   );
 };
