@@ -4,19 +4,19 @@ import styled from 'styled-components/native';
 
 const Page = styled.SafeAreaView`
   flex: 1;
-  background-color: blue;
 `;
-const Texto = styled.Text`
-  color: ${props => props.cor};
-  font-size: 30px;
-  background-color: green;
+const Quadrado = styled.View`
+  width: 50px;
+  height: 50px;
+  background-color: ${props => props.cor};
 `;
 
 export default () => {
   return (
     <Page>
-      <Texto cor="red">Salve família!!!</Texto>
-      <Texto cor="yellow">Salve família!!!</Texto>
+      <Quadrado cor="red"></Quadrado>
+      <Quadrado cor="green"></Quadrado>
+      <Quadrado cor="blue"></Quadrado>
     </Page>
   );
 };
