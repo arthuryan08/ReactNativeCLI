@@ -4,9 +4,10 @@ import styled from 'styled-components/native';
 
 const Page = styled.SafeAreaView`
   flex: 1;
+  flex-direction: row;
 `;
 const Quadrado = styled.View`
-  width: 50px;
+  flex: 1;
   height: 50px;
   background-color: ${props => props.cor};
 `;
