@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {SafeAreaView, View, Text, Button} from 'react-native';
+import {SafeAreaView, View, Text, Button, TextInput} from 'react-native';
 import styled from 'styled-components/native';
 
 const Page = styled.SafeAreaView`
