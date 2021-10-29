@@ -29,7 +29,7 @@ const Hello = () => {
     <View>
       <Input value={name} onChangeText={e => setName(e)} />
       <Button title="Salvar" onPress={handleClick} />
-      {showMsg ? <Text>Olá {showName}! Como vai?</Text> : null}
+      {showMsg && <Text>Olá {showName}! Como vai?</Text>}
     </View>
   );
 };
