@@ -1,24 +1,22 @@
 import React from 'react';
 import {SafeAreaView, View, Text, StyleSheet} from 'react-native';
+import styled from 'styled-components/native';
+
+const Page = styled.SafeAreaView`
+  flex: 1;
+  background-color: blue;
+`;
+const Texto = styled.Text`
+  color: ${props => props.cor};
+  font-size: 30px;
+  background-color: green;
+`;
 
 export default () => {
   return (
-    <SafeAreaView style={styles.page}>
-      <Text style={styles.texto}>Salve família!!!</Text>
-      <Text style={styles.texto}>Segundo texto</Text>
-      <Text style={[styles.texto, {fontSize: 35}]}>Terceiro texto</Text>
-    </SafeAreaView>
+    <Page>
+      <Texto cor="red">Salve família!!!</Texto>
+      <Texto cor="yellow">Salve família!!!</Texto>
+    </Page>
   );
 };
-
-const styles = StyleSheet.create({
-  page: {
-    height: 270,
-    width: 270,
-    backgroundColor: '#FF0000',
-  },
-  texto: {
-    color: '#FFF',
-    fontSize: 25,
-  },
-});
