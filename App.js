@@ -22,13 +22,16 @@ const Hello = () => {
 
   const handleClick = () => {
     setShowName(name);
-    setShowMsg(true);
+    setShowMsg(!showMsg);
   };
 
   return (
     <View>
       <Input value={name} onChangeText={e => setName(e)} />
-      <Button title="Salvar" onPress={handleClick} />
+      <Button
+        title={showMsg ? 'Ocultar nome' : 'Mostrar nome'}
+        onPress={handleClick}
+      />
       {showMsg && <Text>Olá {showName}! Como vai?</Text>}
     </View>
   );
