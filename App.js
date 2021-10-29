@@ -13,8 +13,8 @@ export default () => {
 
 const styles = StyleSheet.create({
   page: {
-    height: 250,
-    width: 250,
+    height: 270,
+    width: 270,
     backgroundColor: '#FF0000',
   },
   texto: {
