@@ -17,17 +17,19 @@ const Input = styled.TextInput`
 const Hello = () => {
   const [name, setName] = useState('');
 
-  const [showName, setSHowName] = useState('');
+  const [showMsg, setShowMsg] = useState(false);
+  const [showName, setShowName] = useState('');
 
   const handleClick = () => {
-    setSHowName(name);
+    setShowName(name);
+    setShowMsg(true);
   };
 
   return (
     <View>
       <Input value={name} onChangeText={e => setName(e)} />
       <Button title="Salvar" onPress={handleClick} />
-      <Text>{showName}</Text>
+      {showMsg ? <Text>Olá {showName}! Como vai?</Text> : null}
     </View>
   );
 };
